@@ -1,0 +1,109 @@
+.shoping_page {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: black;
+}
+
+.shoping_page > header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: aqua;
+}
+
+.shoping_page > header > h1 {
+    font-size: 20px;
+}
+
+.slider {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.slider > div > button {
+    border: none;
+    background: none;
+    font-weight: bold;
+}
+
+.slider > div > img {
+    max-width: 300px;
+}
+
+.sell_plant {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 30px 5px;
+    margin: 10px 0;
+}
+
+.sell_plant > div {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.sell_plant > div > div {
+    width: 250px;
+    height: 350px;
+    padding: 0 5px;
+    text-align: center;
+}
+
+.sell_plant > div > div > img {
+    width: 250px;
+    height: 300px;
+}
+
+.video {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.blog {
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    align-items: center;
+}
+
+.blog > div {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.blog > div > div {
+    width: 350px;
+    margin: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.blog > div > div > img {
+    max-width: 340px;
+    height: 300px;
+}
+
+.footer {
+    display: flex;
+    justify-content: space-evenly;
+    padding: 30px 0;
+    border-top: 2px solid black;
+    border-radius: 12px;
+}
+
+.footer > a {
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: bold;
+
+}

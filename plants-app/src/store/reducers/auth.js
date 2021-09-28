@@ -1,0 +1,72 @@
+import { createSlice } from '@reduxjs/toolkit';
+
+const authSuccess = (state, action) => {
+    return (
+        state.token = action.payload.idToken,
+        state.userId = action.payload.userId,
+        state.name = action.payload.name,
+        state.email = action.payload.email,
+        state.error = null,
+        state.loading = false
+    )
+}
+
+const authFail = (state, action) => {
+    return (
+        state.error = action.payload.error,
+        state.loading = false
+    )
+}
+
+const authLogout = (state, action) => {
+    return (
+        state.token = null,
+        state.userId = null,
+        state.name = null,
+        state.email = null
+    )
+}
+
+const setAuthRedirectPath = (state, action) => {
+    return (
+        state.authRedirectPath = action.payload.path
+    )
+}
+
+const authSlice = createSlice({
+    name: 'auth',
+    initialState: {
+        token: null,
+        userId: null,
+        error: null,
+        loading: false,
+        authRedirectPath: '/',
+        name: null,
+        email: null,
+        isNewUser: null
+    },
+    reducers: {
+        AUTH_SUCCESS: (state,action) => {
+            authSuccess(state, action)
+        },
+        AUTH_FAIL: (state, action) => {
+            authFail(state, action)
+        },
+        AUTH_LOGOUT: (state, action) => {
+            authLogout(state, action)
+        },
+        SET_AUTH_REDIRECT_PATH: (state, action) => {
+            setAuthRedirectPath(state, action)
+        }
+    }
+})
+
+export default authSlice.reducer;
+
+export const {
+    AUTH_START, 
+    AUTH_SUCCESS, 
+    AUTH_FAIL, 
+    AUTH_LOGOUT, 
+    SET_AUTH_REDIRECT_PATH
+} = authSlice.actions
